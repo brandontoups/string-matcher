@@ -22,16 +22,19 @@ class Matcher
 			
 			# else if this character is included in the value set of the hashmap
     			elsif symbols.values.include?(char)
-					# program will return false iff the next popped character does
-					# not equal the key value associated with that value in the Set
+				# program will return false iff the next popped character does
+				# not equal the key value associated with that value in the Set
     				return false if symbols.key(char) != stack.pop
-    	  			end
+    			end
 			
-				end
+			end
+
 		# stack empty -> all brackets matched (all pushed openers had popped closers
 		# false if not empty
-    		stack.empty?
-  	end
+			stack.empty?
+			
+	end
+	  
 end
 
 # i/o - takes string value as input
