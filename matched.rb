@@ -27,7 +27,7 @@ class Matcher
 			# not equal the key value associated with that value in the Set
     			return false if symbols.key(char) != stack.pop
 	
-				end
+			end
 			
 		end
 
