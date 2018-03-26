@@ -7,10 +7,11 @@
 class Matcher
   	def paired?(input)
 		# stack for easy check
-    		stack = []
+    	stack = []
 		# hashmap implementation { key => values, ... }
 		# (%Q avoids double quote escape issue
-    		symbols = {'{' => '}', '[' => ']', '(' => ')', "%Q" => "%Q"}
+    	symbols = {'{' => '}', '[' => ']', '(' => ')', "%Q" => "%Q"}
+		
 		# for each character in string
 		input.each_char do |char|
 			
@@ -38,7 +39,7 @@ print "Enter a string: "
 # .chomp removes the newline 
 str = gets.chomp
 
-# "Any brackets between quotations must be ignored."
+# Since any brackets between quotations must be ignored: 
 # RegEx - ignores all portions of text enclosed in quotes
 # \s* allows whitespace before first quote
 # \" escaped double quote
@@ -47,6 +48,7 @@ str = gets.chomp
 # $ end of string
 # To aid in portability, dumb quotes (stright quotes) were used (%Q).
 no_quotes = str.sub /\s*\".+\"$/, ''
+
 # class object
 rb = Matcher.new()
 # class method paired?()
