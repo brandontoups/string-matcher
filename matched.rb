@@ -7,30 +7,30 @@
 class Matcher
   	def paired?(input)
 		# stack for easy check
-    	stack = []
+    		stack = []
 		# hashmap implementation { key => values, ... }
 		# (%Q avoids double quote escape issue
-    	symbols = {'{' => '}', '[' => ']', '(' => ')', "%Q" => "%Q"}
+    		symbols = {'{' => '}', '[' => ']', '(' => ')', "%Q" => "%Q"}
 		
 		# for each character in string
 		input.each_char do |char|
 			
 			# if that character is a key value in symbols hashmap
-    		if symbols.key?(char)
+    			if symbols.key?(char)
 				# push that character onto stack
-	        	stack.push(char)
+	        		stack.push(char)
 			
 			# else if this character is included in the value set of the hashmap
-    		elsif symbols.values.include?(char)
-				# program will return false iff the next popped character does
-				# not equal the key value associated with that value in the Set
-    			return false if symbols.key(char) != stack.pop
-      			end
+    			elsif symbols.values.include?(char)
+					# program will return false iff the next popped character does
+					# not equal the key value associated with that value in the Set
+    				return false if symbols.key(char) != stack.pop
+    	  			end
 			
-			end
+				end
 		# stack empty -> all brackets matched (all pushed openers had popped closers
 		# false if not empty
-    	stack.empty?
+    		stack.empty?
   	end
 end
 
