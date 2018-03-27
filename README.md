@@ -1,14 +1,22 @@
 # String Matcher
 
-Balancing brackets in a program correctly is one of the most difficult problems facing programmers today. This is the beginning stages of a text editor / IDE implementation of a bracket matching checker. Written in Ruby. 
+Balancing brackets correctly in a program is one of the most difficult problems facing programmers today. This a matching bracket checker. Written in Ruby. 
+
+## Description
+
+The idea behind this is that any { in a piece of code should be matched with a }. This is a fundamental feature in most IDEs and compilers. The idea should extend to [], as well as making sure that quotation marks always have a complete pair. 
+
+Any brackets between quotations will be ignored and treated as quoted material. This is done using regex to remove any text written between quotation marks. 
 
 ## Getting Started
 
-Run the program with ```python3 matched.rb``` and input a string to be checked for correct matching brackets. 
+Run the program with 
 
-Any brackets between quotations will be ignored and treated as quoted material.
+```python3 matched.rb``` 
+
+Input a string to be checked for correct matching brackets. 
  
-## Running Program
+## Execution
 
 Example executions:
 - ``` (some [text ) more text ] ``` returns false

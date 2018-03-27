@@ -9,7 +9,7 @@ class Matcher
 		# stack for easy check
     		stack = []
 		# hashmap implementation { key => values, ... }
-		# (%Q avoids double quote escape issue
+		# (%Q avoids double quote escape issue)
     		symbols = {'{' => '}', '[' => ']', '(' => ')', "%Q" => "%Q"}
 		
 		# for each character in string
