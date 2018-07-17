@@ -45,12 +45,11 @@ print "Enter a string: "
 str = gets.chomp
 
 # Since any brackets between quotations must be ignored: 
-# RegEx - ignores all portions of text enclosed in quotes
-# \s* allows whitespace before first quote
-# \" escaped double quote
-# .+ match one or more of characters
-# \" close quotes
-# $ end of string
+# RegEx to ignore all portions of text enclosed in quotes
+# \s*	zero or more whitespace before first quote
+# \" 	escaped double quote
+# .+ 	match one or more of any character inside quotes
+# \"$ 	the end of regex must be close quotes 
 # To aid in portability, dumb quotes (stright quotes) were used (%Q).
 no_quotes = str.sub /\s*\".+\"$/, ''
 
